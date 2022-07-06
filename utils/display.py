@@ -33,6 +33,9 @@ def show_fps(img, fps):
     cv2.putText(img, fps_text, (10, 20), font, 1.0, (240, 240, 240), 1, line)
     return img
 
+def return_fps(fps):
+    fps_text = '{:.2f}'.format(fps)
+    return fps_text
 
 def set_display(window_name, full_scrn):
     """Set disply window to either full screen or normal."""

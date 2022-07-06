@@ -35,7 +35,7 @@ def add_camera_args(parser):
                               'rtsp://admin:123456@192.168.1.64:554'))
     parser.add_argument('--rtsp_latency', type=int, default=200,
                         help='RTSP latency in ms [200]')
-    parser.add_argument('--usb', type=int, default=None,
+    parser.add_argument('--usb', type=int, default=0,
                         help='USB webcam device id (/dev/video?) [None]')
     parser.add_argument('--gstr', type=str, default=None,
                         help='GStreamer string [None]')
@@ -74,16 +74,25 @@ def open_cam_rtsp(uri, width, height, latency):
         raise RuntimeError('H.264 decoder not found!')
     return cv2.VideoCapture(gst_str, cv2.CAP_GSTREAMER)
 
-
+'''
 def open_cam_usb(dev, width, height):
     """Open a USB webcam."""
     if USB_GSTREAMER:
         gst_str = ('v4l2src device=/dev/video{} ! '
                    'video/x-raw, width=(int){}, height=(int){} ! '
                    'videoconvert ! appsink').format(dev, width, height)
-        return cv2.VideoCapture(gst_str, cv2.CAP_GSTREAMER)
+        return cv2.VideoCapture(0. CAP_V4L)
+        #return cv2.VideoCapture(gst_str, cv2.CAP_GSTREAMER)
     else:
         return cv2.VideoCapture(dev)
+'''
+
+
+def open_cam_usb(dev, width, height):
+    gst_str = ('v4l2src device=/dev/video{} ! '
+            'video/x-raw, width=(int){}, height=(int){} ! '
+            'videoconvert ! appsink').format(dev, width, height)
+    return cv2.VideoCapture(0)
 
 
 def open_cam_gstr(gstr, width, height):
