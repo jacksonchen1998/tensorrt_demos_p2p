@@ -4,8 +4,19 @@ I use `croc` communication protocol to make it can transfer info. and FPS value 
 
 The purpose of this project is to effectively balance the work of the cameras and promote the efficient operation of the system.
 
+<center>
+    <img src="p2p_object.png" width=100%>    
+</center>
+
+[Handover powerpoint](https://docs.google.com/presentation/d/1f_xg9IEuBLhfPPxF9BieUO4W5CQIMBVZ/edit?usp=sharing&ouid=109633914805305927895&rtpof=true&sd=true)
+
+## Table of contents
 * [croc](https://github.com/jacksonchen1998/tensorrt_demos_p2p/edit/master/README.md#croc)
 * [tensorrt_demos](https://github.com/jacksonchen1998/tensorrt_demos_p2p/edit/master/README.md#tensorrt_demos)
+
+## Original repo.
+* [croc](https://github.com/schollz/croc)
+* [tensorrt_demos](https://github.com/jkjung-avt/tensorrt_demos)
 
 # croc
 
